@@ -22,14 +22,15 @@ public class FizzBuzzSolution {
             }
             isBuzz = true;
         }
+        if(tempNumber > 10) {
+            while (tempNumber != 0) {
 
-        while(tempNumber != 0){
+                int digit = tempNumber % 10;
+                tempNumber = tempNumber / 10;
 
-            int digit = number % 10;
-            tempNumber = tempNumber / 10;
-
-            if(digit != lastDigit){
-                isDeluxe = false;
+                if (digit != lastDigit) {
+                    isDeluxe = false;
+                }
             }
         }
 
@@ -44,5 +45,6 @@ public class FizzBuzzSolution {
     }
 
 }
+
 
 
