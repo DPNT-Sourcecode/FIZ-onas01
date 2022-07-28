@@ -7,17 +7,36 @@ public class FizzBuzzSolution {
     public String fizzBuzz(Integer number) {
         String result = "";
         boolean isFizz = false;
+        boolean isBuzz = false;
+        boolean isDeluxe = true;
+        int tempNumber = number;
+        int lastDigit = number % 10;
+
         if (number % 3 == 0 || number.toString().contains("3")) {
             result = "fizz";
             isFizz = true;
         }
         if (number % 5 == 0 || number.toString().contains("5")) {
             if(isFizz){
-                return result + " buzz";
+                result += " buzz";
             }
-            return "buzz";
-        }else if(isFizz){
-            return result;
+            isBuzz = true;
+        }
+
+        while(number != 0){
+
+            int digit = number % 10;
+            tempNumber = tempNumber / 10;
+
+            if(digit != lastDigit){
+                isDeluxe = false;
+            }
+        }
+
+        if(isDeluxe && (isFizz || isBuzz)){
+            return result + " deluxe";
+        }else if (isDeluxe){
+            return "deluxe";
         }else{
             return number.toString();
         }
@@ -25,3 +44,4 @@ public class FizzBuzzSolution {
     }
 
 }
+
