@@ -6,6 +6,7 @@ public class FizzBuzzSolution {
 
     public String fizzBuzz(Integer number) {
         String result = "";
+        String deluxe = "deluxe";
         boolean isFizz = false;
         boolean isBuzz = false;
         boolean isDeluxe = true;
@@ -25,13 +26,16 @@ public class FizzBuzzSolution {
             isBuzz = true;
         }
         if(tempNumber > 10) {
+            if(tempNumber % 2 != 0) {
+                deluxe = "false deluxe";
+            }
             while (tempNumber != 0) {
 
                 int digit = tempNumber % 10;
                 tempNumber = tempNumber / 10;
-
                 if (digit != lastDigit) {
                     isDeluxe = false;
+                    break;
                 }
             }
         }else{
@@ -40,9 +44,9 @@ public class FizzBuzzSolution {
 
         if(isDeluxe){
             if(isFizz || isBuzz){
-                return result + " deluxe";
+                return result + " " + deluxe;
             }else{
-                return "deluxe";
+                return deluxe;
             }
         }else if (isFizz || isBuzz){
             return result;
@@ -53,3 +57,4 @@ public class FizzBuzzSolution {
     }
 
 }
+
