@@ -19,6 +19,8 @@ public class FizzBuzzSolution {
         if (number % 5 == 0 || number.toString().contains("5")) {
             if(isFizz){
                 result += " buzz";
+            }else {
+                result = "buzz";
             }
             isBuzz = true;
         }
@@ -36,10 +38,14 @@ public class FizzBuzzSolution {
             isDeluxe = false;
         }
 
-        if(isDeluxe && (isFizz || isBuzz)){
-            return result + " deluxe";
-        }else if (isDeluxe){
-            return "deluxe";
+        if(isDeluxe){
+            if(isFizz || isBuzz){
+                return result + " deluxe";
+            }else{
+                return "deluxe";
+            }
+        }else if (isFizz || isBuzz){
+            return result;
         }else{
             return number.toString();
         }
@@ -47,7 +53,3 @@ public class FizzBuzzSolution {
     }
 
 }
-
-
-
-
