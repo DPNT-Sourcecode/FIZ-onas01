@@ -31,7 +31,7 @@ public class FizzBuzzSolution {
         }
 
         if(number % 2 != 0){
-            deluxe = " fake delux";
+            deluxe = " fake deluxe";
         }
 
         if(isDeluxe){
@@ -45,6 +45,7 @@ public class FizzBuzzSolution {
     }
 
 }
+
 
 
 
