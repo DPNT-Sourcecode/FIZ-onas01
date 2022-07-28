@@ -23,7 +23,7 @@ public class FizzBuzzSolution {
             isBuzz = true;
         }
 
-        while(number != 0){
+        while(tempNumber != 0){
 
             int digit = number % 10;
             tempNumber = tempNumber / 10;
@@ -44,4 +44,5 @@ public class FizzBuzzSolution {
     }
 
 }
+
 
