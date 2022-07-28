@@ -6,18 +6,22 @@ public class FizzBuzzSolution {
 
     public String fizzBuzz(Integer number) {
         String result = "";
-        String deluxe = "deluxe";
+        String deluxe = " deluxe";
         boolean isFizz = false;
         boolean isBuzz = false;
-        boolean isDeluxe = true;
-        int tempNumber = number;
-        int lastDigit = number % 10;
+        boolean isDeluxe = false;
 
         if (number % 3 == 0 || number.toString().contains("3")) {
             result = "fizz";
             isFizz = true;
+            if(number % 3 == 0 && number.toString().contains("3")){
+                isDeluxe = true;
+            }
         }
         if (number % 5 == 0 || number.toString().contains("5")) {
+            if(number % 5 == 0 && number.toString().contains("5")){
+                isDeluxe = true;
+            }
             if(isFizz){
                 result += " buzz";
             }else {
@@ -25,29 +29,13 @@ public class FizzBuzzSolution {
             }
             isBuzz = true;
         }
-        if(tempNumber > 10) {
-            if(tempNumber % 2 != 0) {
-                deluxe = "fake deluxe";
-            }
-            while (tempNumber != 0) {
 
-                int digit = tempNumber % 10;
-                tempNumber = tempNumber / 10;
-                if (digit != lastDigit) {
-                    isDeluxe = false;
-                    break;
-                }
-            }
-        }else{
-            isDeluxe = false;
+        if(number % 2 != 0){
+            deluxe = " fake delux";
         }
 
         if(isDeluxe){
-            if(isFizz || isBuzz){
-                return result + " " + deluxe;
-            }else{
-                return deluxe;
-            }
+            return result + deluxe;
         }else if (isFizz || isBuzz){
             return result;
         }else{
@@ -57,5 +45,6 @@ public class FizzBuzzSolution {
     }
 
 }
+
 
 
