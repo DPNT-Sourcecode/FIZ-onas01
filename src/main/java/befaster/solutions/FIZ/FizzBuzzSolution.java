@@ -5,16 +5,22 @@ import befaster.runner.SolutionNotImplementedException;
 public class FizzBuzzSolution {
 
     public String fizzBuzz(Integer number) {
-        if(number % 3 == 0 && number % 5 == 0){
-            return "fizz buzz";
-        } else if (number % 3 == 0) {
-            return "fizz";
-        } else if (number % 5 == 0) {
+        String result = "";
+        boolean isFizz = false;
+        if (number % 3 == 0 || number.toString().contains("3")) {
+            result = "fizz";
+            isFizz = true;
+        } else if (number % 5 == 0 || number.toString().contains("5")) {
+            if(isFizz){
+                return result + " buzz";
+            }
             return "buzz";
         }else{
          return number.toString();
         }
+        return result;
     }
 
 }
+
 
