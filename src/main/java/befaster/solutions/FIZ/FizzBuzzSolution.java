@@ -32,6 +32,8 @@ public class FizzBuzzSolution {
                     isDeluxe = false;
                 }
             }
+        }else{
+            isDeluxe = false;
         }
 
         if(isDeluxe && (isFizz || isBuzz)){
@@ -45,6 +47,7 @@ public class FizzBuzzSolution {
     }
 
 }
+
 
 
 
