@@ -27,7 +27,7 @@ public class FizzBuzzSolution {
         }
         if(tempNumber > 10) {
             if(tempNumber % 2 != 0) {
-                deluxe = "false deluxe";
+                deluxe = "fake deluxe";
             }
             while (tempNumber != 0) {
 
@@ -57,4 +57,5 @@ public class FizzBuzzSolution {
     }
 
 }
+
 
